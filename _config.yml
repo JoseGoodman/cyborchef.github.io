@@ -131,8 +131,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: Amu The CyberChef # blog_name will be displayed in your blog page
+blog_description: Make it simple and clean!
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -632,11 +632,6 @@ jsonresume:
   - basics
   - work
   - education
-  - publications
-  - projects
-  - volunteer
-  - awards
-  - certificates
   - skills
   - languages
   - interests

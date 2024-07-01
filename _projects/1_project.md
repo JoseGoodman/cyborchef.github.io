@@ -1,81 +1,362 @@
 ---
 layout: page
-title: project 1
-description: with background image
+title: AI智能填志愿助手系统的设计
+description: 智能填志愿助手设计灵感
 img: assets/img/12.jpg
 importance: 1
 category: work
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## 需求分析
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+首先，详细分析和定义系统的功能需求和非功能需求。根据上述的功能模块，创建详细的需求文档，包括用户故事和使用场景。
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+### 系统模块
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+1. **用户管理模块**
+    - 用户注册与登录
+    - 身份验证（学生、家长、老师、高校学生、专家）
+    - 用户角色权限管理
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+2. **志愿填报模块**
+    - 专科和本科志愿填报
+    - 提前批、一本、二本等不同批次选择
+    - 文科和理科分类志愿选择
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+3. **科目选择模块**
+    - 根据用户所在省市和高考政策筛选可选科目
+    - 不同城市的大学信息和专业介绍
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+4. **智能推荐模块**
+    - 高考成绩、兴趣爱好、未来职业规划等因素智能推荐
+    - 大数据分析和人工智能算法提供个性化志愿填报建议
 
-{% raw %}
+5. **志愿填报模拟模块**
+    - 志愿填报模拟练习
+    - 结合往年录取数据和分数线评估录取可能性
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+6. **专业和职业指导模块**
+    - 各专业详细介绍、就业前景、薪资水平等信息
+    - 职业规划测试
+
+7. **院校数据库模块**
+    - 完整的高校信息库
+    - 动态更新院校信息
+
+8. **用户交流平台模块**
+    - 学生、家长、老师间的交流平台
+    - 在线咨询功能
+
+9. **实时数据分析和反馈模块**
+    - 实时分析高考政策、分数线、录取数据
+    - 志愿填报结果跟踪和反馈
+
+10. **安全性和隐私保护模块**
+    - 数据加密和隐私保护
+    - 用户数据管理和删除选项
+
+11. **多终端支持模块**
+    - 支持PC端、移动端（iOS和Android）
+    - 响应式设计
+
+12. **高校学生指导模块**
+    - 高校学生注册和身份验证
+    - 高校学生指导匹配机制
+    - 付费咨询和评价系统
+
+13. **专家一对一指导模块**
+    - 专家注册和身份验证
+    - 专家预约系统
+    - 付费服务和个性化指导
+
+14. **在线沟通工具模块**
+    - 实时聊天和视频通话
+    - 文件传输和共享
+
+15. **支付系统模块**
+    - 第三方支付平台集成
+    - 透明收费标准和支付记录
+
+16. **预约和提醒系统模块**
+    - 灵活的预约时间选择
+    - 自动提醒功能
+
+17. **用户界面设计模块**
+    - 友好且直观的用户界面
+    - 清晰的指导流程和操作指引
+
+18. **客户支持和反馈机制模块**
+    - 全天候客户支持服务
+    - 用户反馈收集和系统优化
+
+---
+
+## 详细功能描述
+
+### 用户管理模块
+1. 用户可以通过手机号码、邮箱等方式注册。
+2. 注册时进行实名认证，确保用户身份的真实性和安全性。
+3. 根据用户的角色（学生、家长、老师、高校学生、专家），分配不同的权限和功能。
+
+### 志愿填报模块
+1. 用户可以选择志愿类型（专科、本科）和批次（提前批、一本、二本等）。
+2. 提供文科和理科分类的志愿选择，自动匹配用户的科目类型。
+
+### 科目选择模块
+1. 根据用户所在省市和高考政策，自动筛选可选科目。
+2. 提供各城市大学的专业介绍和信息，帮助用户做出更好的选择。
+
+### 智能推荐模块
+1. 利用用户的高考成绩、兴趣爱好、未来职业规划等信息，通过大数据和人工智能算法，智能推荐适合的学校和专业。
+2. 提供个性化的志愿填报建议，提高志愿填报的成功率。
+
+### 志愿填报模拟模块
+1. 提供志愿填报模拟功能，用户可以在正式填报前进行模拟练习。
+2. 结合往年录取数据和分数线，帮助用户评估录取的可能性。
+
+### 专业和职业指导模块
+1. 提供各专业的详细介绍，包括就业前景和薪资水平等信息。
+2. 职业规划测试，帮助学生了解自己的职业倾向。
+
+### 院校数据库模块
+1. 完整的高校信息库，包括学校介绍、专业设置、录取分数线、校园环境等信息。
+2. 动态更新院校信息，确保数据的时效性和准确性。
+
+### 用户交流平台模块
+1. 提供学生、家长、老师之间的交流平台，用户可以分享填报经验和信息。
+2. 在线咨询功能，专业导师解答志愿填报相关问题。
+
+### 实时数据分析和反馈模块
+1. 实时分析高考政策、分数线、录取数据等，提供及时的填
+
+报建议。
+2. 实时跟踪志愿填报结果，帮助用户调整志愿选择。
+
+### 安全性和隐私保护模块
+1. 加强数据加密和隐私保护，确保用户信息安全。
+2. 提供用户数据管理和删除选项，保障用户数据自主权。
+
+### 多终端支持模块
+1. 支持PC端、移动端（iOS和Android）的使用，提供跨平台一致的用户体验。
+2. 响应式设计，适应不同设备和屏幕尺寸。
+
+### 高校学生指导模块
+1. 高校在校生可以注册成为志愿指导者，通过实名认证确保指导者的真实性。
+2. 根据学生所填报的志愿和选择的学校，匹配相应学校的在校生进行指导。
+3. 提供付费咨询服务，学生可以直接付费咨询高校在校生，获取第一手的学校和专业信息。
+4. 评价系统，用户可以对高校学生的咨询服务进行评价，确保服务质量。
+
+### 专家一对一指导模块
+1. 专业教育咨询师和高考志愿填报专家可以注册成为平台专家，通过实名认证确保专家的资质。
+2. 学生和家长可以通过平台预约专家进行一对一指导。
+3. 提供透明的收费标准和支付流程，确保服务质量和用户体验。
+4. 专家根据学生的个人情况、成绩和兴趣，提供个性化的志愿填报建议。
+
+### 在线沟通工具模块
+1. 内置实时聊天和视频通话功能，方便学生与指导者进行即时沟通。
+2. 提供文件传输和共享功能，便于交流资料和信息。
+
+### 支付系统模块
+1. 集成第三方支付平台（如支付宝、微信支付），支持在线支付和退款。
+2. 提供透明的收费标准和支付记录，保障用户权益。
+
+### 预约和提醒系统模块
+1. 提供灵活的预约时间选择，用户可以根据自己的时间安排进行预约。
+2. 自动提醒功能，通过短信或应用内通知，提醒用户即将到来的咨询预约。
+
+### 用户界面设计模块
+1. 友好且直观的用户界面设计，方便用户快速上手使用。
+2. 清晰的指导流程和操作指引，减少用户的操作难度。
+
+### 客户支持和反馈机制模块
+1. 提供全天候的客户支持服务，帮助用户解决使用过程中遇到的问题。
+2. 收集用户反馈，定期更新和优化系统功能和服务。
+
+---
+
+## 系统架构设计
+
+### 技术选型
+
+选择适合的技术栈，包括前端、后端、数据库和其他必要的技术：
+
+- 前端：React, **Vue.js**
+- 后端：**Spring Boot (Java)**
+- 数据库：**MySQL, PostgreSQL**
+
+```plain
+MySQL存储结构化数据，如用户信息、志愿填报记录、学校和专业信息等。
+数据库设计步骤：
+
+1. 需求分析:
+   - 确定需要存储的数据类型和数据量。
+   - 分析数据的关系和结构。
+
+2. 数据库模式设计:
+   - 根据需求设计数据库的表结构和关系（ER图）。
+   - 确定主键、外键和索引等。
+
+3. 数据库表结构:
+   - 用户表：存储用户信息（包括学生、家长、老师、高校学生、专家）。
+   - 学校表：存储学校信息。
+   - 专业表：存储专业信息。
+   - 志愿填报记录表：存储志愿填报模拟和正式记录。
+   - 咨询和评价表：存储咨询记录和用户评价。
+
+GraphQL API 可以提供灵活和高效的数据查询。使用GraphQL来构建API，让前端和后端的通信更加高效。
+
+选择GraphQL 的原因：
+1. 灵活查询:
+   - 客户端可以指定需要的数据，避免过多或不足的数据传输。
+   - 支持嵌套查询，可以一次请求获取相关数据。
+
+2. 高效通信:
+   - 减少HTTP请求次数，提升性能。
+   - 通过单一端点提供多样化数据访问。
+
+整合MySQL和GraphQL：
+1. 数据库层:
+   - 使用MySQL存储所有结构化数据。
+
+2. API层:
+   - 使用GraphQL作为API查询语言。
+   - GraphQL服务器（例如Apollo Server）与MySQL数据库进行交互。
 ```
 
-{% endraw %}
+- 大数据和AI：Hadoop, Spark, Python (机器学习库如TensorFlow, Scikit-learn)
+
+```plain
+AI和推荐系统
+
+1. 数据收集和处理
+   - 收集高考相关数据，包括往年录取数据、学校和专业信息等
+   - 数据清洗和预处理
+   - 数据库存储和管理
+
+2. 模型训练和优化
+   - 使用Python和机器学习算法训练推荐模型：
+   - 根据用户数据和历史数据，训练志愿填报推荐模型
+   - 使用TensorFlow或Scikit-learn优化模型性能，确保推荐的准确性和有效性
+
+3. 大数据处理
+   - 使用Hadoop和Spark处理和分析大量数据：
+   - 处理高考成绩、志愿填报记录等大规模数据集
+   - 实现数据挖掘和分析，为智能推荐系统提供支持
+```
+
+- 实时通信：**WebSocket**, WebRTC
+- 支付集成：**支付宝、微信支付API**
+
+### 系统架构
+
+设计系统架构图，包括前端、后端、数据库和其他服务的交互：
+
+- 前端与后端通信：使用RESTful API或GraphQL
+- 数据存储：设计数据库模式（ER图）
+- 实时通信和消息传递：使用WebSocket/ WebRTC
+- AI和推荐系统：使用大数据平台和机器学习模型
+
+---
+
+## 数据库设计
+
+设计数据库架构，确保数据的完整性和一致性：
+
+1. 用户表：存储用户信息（包括学生、家长、老师、高校学生、专家）
+2. 学校和专业表：存储学校和专业信息
+3. 咨询和评价表：存储咨询记录和用户评价
+4. 志愿填报记录表：存储志愿填报模拟和正式记录
+
+---
+
+## 前端设计
+
+### 原型设计
+
+使用设计工具（如Figma, Sketch）进行原型设计：
+
+1. 创建用户界面原型图
+2. 设计用户体验（UX），确保界面友好和易用
+
+### 前端开发
+
+开发前端应用：
+
+1. 使用React或Vue.js开发用户界面
+2. 实现响应式设计，适配不同设备和屏幕尺寸
+3. 集成实时通信功能（聊天、视频通话）
+
+---
+
+## 后端设计与开发
+
+### API设计
+
+设计后端API，定义各个功能模块的接口：
+
+1. 用户管理API：注册、登录、身份验证、权限管理
+2. 志愿填报API：志愿选择、智能推荐、填报模拟
+3. 专业指导API：高校学生和专家指导的预约和咨询
+
+### 后端开发
+
+使用Spring Boot开发后端应用：
+
+1. 实现用户管理、志愿填报、专业指导等功能模块
+2. 集成第三方支付平台
+3. 开发数据分析和推荐系统
+
+---
+
+## AI和推荐系统
+
+### 数据收集和处理
+
+收集高考相关数据，包括往年录取数据、学校和专业信息等：
+
+1. 数据清洗和预处理
+2. 数据库存储和管理
+
+### 模型训练和优化
+
+使用机器学习算法训练推荐模型：
+
+1. 根据用户数据和历史数据，训练志愿填报推荐模型
+2. 优化模型性能，确保推荐的准确性和有效性
+
+---
+
+## 测试和部署
+
+### 测试
+
+进行全面的测试，包括单元测试、集成测试和用户接受度测试：
+
+1. 确保各个功能模块的正确性和稳定性
+2. 确保系统性能和安全性
+
+### 部署
+
+将系统部署到生产环境：
+
+1. 选择合适的云服务提供商（如AWS, Alibaba Cloud）
+2. 设置自动化部署和持续集成/持续交付（CI/CD）管道
+
+---
+
+## 运营和维护
+
+### 运营
+
+监控系统运行状态，收集用户反馈：
+
+1. 根据用户反馈和使用数据，不断优化和更新系统
+2. 提供客户支持和技术支持
+
+### 维护
+
+定期维护和更新系统，确保系统的稳定性和安全性：
+
+1. 进行安全审计和漏洞修复
+2. 更新和优化系统功能

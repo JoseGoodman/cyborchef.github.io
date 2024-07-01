@@ -2,18 +2,18 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Abdurahman
     - name: Date of Birth
-      value: 14th March 1879
+      value: 26 April 1994
     - name: Languages
-      value: English, German
+      value: Uyghur,Chinese,English
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Bachelor
+      institution: Dalian University of technology, China
+      year: 2018
       description:
         - Description 1.
         - Description 2.
